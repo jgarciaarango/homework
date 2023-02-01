@@ -5,6 +5,10 @@
 # Hint: use the 3 argument form of range()
 
 # Your code goes here
+start = 5
+end = 50 
+for i in range(5,50,7):
+	print(i)
 
 """
 python3 20loop.py
