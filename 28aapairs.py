@@ -6,7 +6,17 @@
 # Also print out how many combinations there are
 
 # Hint: if you get stuck for more than 10 minutes, get help
-
+amino = "ACDEFGHIKLMNPQRSTVWY"
+combocount = 0
+for i in range(len(amino)):
+	currentacid = amino[i]
+	for j in range(i+1,len(amino)):
+		comboacid = amino[j]
+		combocount += 1
+		print(currentacid, comboacid)
+print(combocount)
+	
+				
 
 """
 python3 28aapairs.py
