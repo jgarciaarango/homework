@@ -5,7 +5,16 @@
 # Use the same loop for both calculations
 
 # Note: you may not import math or any other library
-
+n = 5
+runningsum = 0 
+factorial = 1 
+for i in range(1,n+1):
+	runningsum += i
+	factorial = factorial *i
+print(n)
+print(runningsum)
+print(factorial)
+	 
 
 """
 python3 22sumfac.py
