@@ -13,8 +13,19 @@
 
 seq = 'ACGACGCAGGAGGAGAGTTTCAGAGATCACGAATACATCCATATTACCCAGAGAGAG'
 w = 11
-
-
+gccount = 0
+windowcount = -1
+for i in range(len(seq)- w + 1):
+	windowcount += 1
+	for j in range(i,i+w):
+		nt = seq[j]
+		if nt == 'G' or nt == 'C':
+			gccount += 1
+	percentgc = gccount/ w
+	
+	print(windowcount, seq[i:i+w], f'{percentgc: .4f}')
+	gccount = 0
+		
 """
 python3 26gcwin.py
 0 ACGACGCAGGA 0.6364
