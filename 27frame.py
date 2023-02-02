@@ -5,9 +5,20 @@
 # Variation: try coding this with a single loop and nested loops
 
 # Note: use 0-based indexing for position and frame (biology uses 1-based)
-
+position = 0
+frame = -1
 dna = 'ATGGCCTTT'
 
+for i in range(len(dna)):
+	position += 1 
+	frame += 1
+	nt = dna[i]
+	if frame >= 3:
+		frame = 0
+		print(f'{position-1} {frame} {nt}')
+	else:
+		print(f'{position-1} {frame} {nt}')
+	
 
 """
 python3 27frame.py
