@@ -15,7 +15,7 @@ import random
 count = 0 
 dayrange = [0] * int(sys.argv[1])
 birthdays = []
-simulations = 100
+simulations = 1000
 #Runs a set number of simulations
 for i in range(simulations):
 #Create a list with random birthdays 
