@@ -37,10 +37,10 @@ def entropy(val):
 #Creates a ditribution for the frequency of basepairs and then returns the entropy value
 #making sure the entropy function works with lowercase
 def ntentropy(seq):
-	A = (seq.count('A')+seq.count('a'))/len(seq)
-	T = (seq.count('T')+seq.count('t'))/len(seq)
-	C = (seq.count('C')+seq.count('c'))/len(seq)
-	G = (seq.count('G')+seq.count('g'))/len(seq)
+	A = seq.count('A')/len(seq)
+	T = seq.count('T')/len(seq)
+	C = seq.count('C')/len(seq)
+	G = seq.count('G')/len(seq)
 	shannon = entropy([A, T, C, G])
 	return shannon 
 #declare the arguments as variables 
@@ -49,6 +49,7 @@ window = arg.w
 threshold = arg.t
 center = window//2
 for name, seq, in mcb185.read_fasta(file):
+	seq = seq.upper()
 	seqlist = list(seq)
 	for i in range(len(seq)-window+1):
 		ent = ntentropy(seq[i:i+window])
@@ -56,7 +57,7 @@ for name, seq, in mcb185.read_fasta(file):
 			if arg.s: seqlist[i+center] = seqlist[i+center].lower()
 			else: seqlist[i] ='N'
 	seq = ''.join(seqlist)
-	print(name)
+	print(f'>{name}')
 	for j in range(0, len(seq), 60): 
 		print(seq[j: j+60])
 """
